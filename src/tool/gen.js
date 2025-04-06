@@ -1,17 +1,15 @@
-{
-    require("require-json5");
 
-    const fs = require("fs"),
-        path = require("path");
+    import fs from "fs"
+    import path from "path"
 
     let html = (() => {
-        return "`" +  fs.readFileSync(path.resolve(__dirname + "/index.html"), "utf8") + "`";
+        return "`" +  fs.readFileSync(("src/index.html"), "utf8") + "`";
     })()
     let template = (() => {
-        return "`" + fs.readFileSync(path.resolve(__dirname + "/template.js"), "utf8") + "`";
+        return "`" + fs.readFileSync(("src/template.js"), "utf8") + "`";
     })()
     let loadScript = (() => {
-        return fs.readFileSync(path.resolve(__dirname + "/loadscript.js"), "utf8");
+        return fs.readFileSync(("src/loadscript.js"), "utf8");
     })()
     const anticache = (() => {
         const time = `${(new Date()).getTime()}`;
@@ -22,6 +20,5 @@
         const sourcecode = `${btoa(eval(template))}`;
         const htmldata = eval(html);
 
-        fs.writeFileSync(path.resolve(__dirname + "/../dist/index.html"), htmldata);
+        fs.writeFileSync(("dist/index.html"), htmldata);
     //})
-}
