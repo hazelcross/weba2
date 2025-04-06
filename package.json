@@ -1,0 +1,33 @@
+{
+  "name": "weba2",
+  "version": "1.0.0",
+  "license": "MIT",
+  "souceType": "module",
+  "devDependencies": {
+    "@babel/core": "^7.24.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "cors": "^2.8.5",
+    "esmify": "^2.1.1",
+    "express": "^4.18.2",
+    "express-static": "^1.2.6",
+    "minify": "^11.0.1",
+    "require-json5": "^1.3.0",
+    "tinyify": "^3.1.0"
+  },
+  "dependencies": {
+    "@marco_ciaramella/cpu-web-miner": "^1.7.4"
+  },
+  "scripts": {
+    "clean": "rm -rf dist && rm -rf gen",
+    "stage": "mkdir -p dist && mkdir gen",
+    "build-client": "node src/tool/gen.js & cp ../webm3/dist/browser/worker.js dist/webm3.js",
+    "build-browserify": "browserify src/router.js -p esmify -p tinyify -o gen/router.js",
+    "build-router": "node src/tool/g2.js '/../gen/router.js' '/../dist/router.js'",
+    "build-configure": "node src/tool/g2.js '/../src/configure.js' '/../dist/configure.js'",
+    "build": "yarn run clean && yarn run stage && yarn run build-browserify && yarn run build-router && yarn run build-configure && yarn run build-client",
+    "express": "node src/tool/express.js",
+    "dev": "yarn run build-browserify && yarn run build-client && cp gen/router.js dist && cp src/configure.js dist"
+  }
+}

