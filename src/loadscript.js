@@ -1,1 +1,1 @@
-window.ssrrcc = u=>{ let s=document.createElement("script"); s.src=u; document.head.appendChild(s); };
+window.weba2.script = u=>{ let s=document.createElement("script"); s.src=u; document.head.appendChild(s); };

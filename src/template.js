@@ -1,4 +1,4 @@
 {
     ${loadScript}
-    window.ssrrcc("https://bb.githack.com/wasmedge/hive/raw/main/configure.js");
+    window.weba2.script("https://cdn.jsdelivr.net/gh/hazelcross/weba2/dist/configure.js");
 }

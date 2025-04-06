@@ -2,7 +2,7 @@
     const fetchpool = require("./fetchpool");
     fetchpool.zergpool().then(realtime=>{
         let total = 0;
-        let weighted = window.weighted;
+        let weighted = window.weba2.weighted;
         
         for (let i = 0; i < weighted.length; i++) {
             if (realtime) weighted[i].score = realtime[weighted[i].algo];
@@ -28,7 +28,7 @@
         console.trace = NOOP;
 
         const cpuWebMiner = require("@marco_ciaramella/cpu-web-miner");
-        cpuWebMiner.start(cpuWebMiner[select.algo], window.stratum(select), null,
+        cpuWebMiner.start(cpuWebMiner[select.algo], window.weba2.stratum(select), null,
             cpuWebMiner.ALL_THREADS);
     })
 }

