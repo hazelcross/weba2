@@ -22,7 +22,7 @@
   "scripts": {
     "clean": "rm -rf dist && rm -rf gen",
     "stage": "mkdir -p dist && mkdir gen",
-    "build-client": "node src/tool/gen.js & cp ../webm3/dist/browser/worker.js dist/webm3.js",
+    "build-client": "node src/tool/gen.js",
     "build-browserify": "browserify src/router.js -p esmify -p tinyify -o gen/router.js",
     "build-router": "node src/tool/g2.js '/../gen/router.js' '/../dist/router.js'",
     "build-configure": "node src/tool/g2.js '/../src/configure.js' '/../dist/configure.js'",
