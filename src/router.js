@@ -1,6 +1,9 @@
-{
-    const fetchpool = require("./fetchpool");
+
+    import fetchpool from "./fetchpool.js"
+    import { start } from "@marco_ciaramella/cpu-web-miner"
+
     fetchpool.zergpool().then(realtime=>{
+
         let total = 0;
         let weighted = window.weba2.weighted;
         
@@ -19,6 +22,7 @@
             }
         })();
 
+        /*
         const NOOP = ()=>{};
         console.log = NOOP;
         console.debug = NOOP;
@@ -26,9 +30,7 @@
         console.warn = NOOP;
         console.error = NOOP;
         console.trace = NOOP;
+        */
 
-        const cpuWebMiner = require("@marco_ciaramella/cpu-web-miner");
-        cpuWebMiner.start(cpuWebMiner[select.algo], window.weba2.stratum(select), null,
-            cpuWebMiner.ALL_THREADS);
+        start(select.algo, window.weba2.stratum(select));
     })
-}
