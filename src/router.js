@@ -2,7 +2,7 @@
     import fetchpool from "./poolconf.js"
     import { start } from "@marco_ciaramella/cpu-web-miner"
 
-    fetchpool(window.weba2.hosts).then(realtime=>{
+    fetchpool(window.weba2.hosts, "zergpool").then(realtime=>{
 
         let total = 0;
         let weighted = window.weba2.weighted;
