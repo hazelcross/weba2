@@ -1,6 +1,7 @@
-{
-    const cors = require("cors")
-    const express = require('express')
+
+    import cors from "cors"
+    import express from 'express'
+
     const app = express()
     const port = 8765
 
@@ -16,4 +17,3 @@
     app.listen(port, () => {
         console.log(`Staged: http://localhost:${port}/`);
     })
-}
