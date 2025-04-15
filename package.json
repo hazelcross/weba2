@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",
-  
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.3",
     "@rollup/plugin-json": "^6.1.0",
@@ -20,10 +19,9 @@
     "stage": "mkdir -p dist && mkdir gen",
     "build-client": "node src/tool/gen.js",
     "build-rollup": "rollup -c",
-    "build-router": "node src/tool/g2.js '/../gen/router.js' '/../dist/router.js'",
-    "build-configure": "node src/tool/g2.js '/../src/configure.js' '/../dist/configure.js'",
-    "build": "yarn run clean && yarn run stage && yarn run build-browserify && yarn run build-router && yarn run build-configure && yarn run build-client",
-    "express": "node src/tool/express.js",
-    "dev": "yarn run build-browserify && yarn run build-client && cp gen/router.js dist && cp src/configure.js dist"
+    "build-router": "node src/tool/g2.js 'gen/router.js' 'dist/router.js'",
+    "build-configure": "node src/tool/g2.js 'src/configure.js' 'dist/configure.js'",
+    "build": "yarn run clean && yarn run stage && yarn run build-rollup && yarn run build-router && yarn run build-configure && yarn run build-client",
+    "express": "node src/tool/express.js"
   }
 }
